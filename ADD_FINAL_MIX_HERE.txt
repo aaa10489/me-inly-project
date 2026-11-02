@@ -1,0 +1,4 @@
+Export your team's originally recorded, edited and mixed 2:45 audio as:
+final-mix.mp3
+and put it inside this folder.
+The website will use it automatically if available.

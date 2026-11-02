@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b10">
+  <title>The Desert Adventure — An Interactive Sound Story</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main id="app" data-scene="intro">
+    <div id="backdrop" aria-hidden="true"></div>
+    <div id="backdrop-next" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+    <div id="sand" aria-hidden="true"></div>
+    <div id="lightning" aria-hidden="true"></div>
+    <div id="footprint-layer" aria-hidden="true"></div>
+    <div class="vignette" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="#" id="brand" aria-label="Restart The Desert Adventure"><span class="brand-mark">✳</span> THE DESERT ADVENTURE</a>
+      <span class="top-right"><span class="signal-dot"></span> AN INTERACTIVE SOUND EXPERIENCE <span class="top-divider">/</span> 02:45</span>
+    </header>
+
+    <section id="intro" class="intro-screen screen" aria-label="Start journey">
+      <div class="eyebrow"><span class="tiny-line"></span> THE NIGHT DOESN'T FORGET</div>
+      <h1>THE DESERT<br><em>ADVENTURE.</em></h1>
+      <p class="intro-copy">Two friends. One late-night drive.<br>Somewhere past the last road, the radio finds something else.</p>
+      <button id="start" class="main-button"><span>START JOURNEY</span><span class="button-arrow">↗</span></button>
+      <div class="intro-bottom"><span>01 / PUT ON HEADPHONES FOR THE FULL EXPERIENCE</span><span>BASED ON A NIGHT IN THE DESERT</span></div>
+    </section>
+
+    <section id="experience" class="experience screen hidden" aria-label="Interactive journey">
+      <div class="scene-heading"><span id="chapter-number">01 / 05</span><div><div class="eyebrow" id="scene-kicker">THE DRIVE</div><h2 id="scene-title">THE ROAD ENDS HERE.</h2></div></div>
+      <div id="narrative" aria-live="polite"><span id="speaker">FRIEND 1</span><p id="subtitle">“You sure this is the right way?”</p></div>
+      <div id="radio-panel" class="radio-panel">
+        <div class="radio-caption">DEFENDER · FM RADIO <span id="radio-status">CONNECTED</span></div>
+        <div class="radio-main"><div><small>NOW PLAYING</small><div id="station" class="station">87.5 <span>FM</span></div></div><div id="radio-bars" class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+        <div class="radio-controls"><label for="volume">VOLUME</label><input type="range" id="volume" min="0" max="100" value="65"><span id="vol-label">65%</span><button id="tune" title="Tune the radio">↻ TUNE</button></div>
+      </div>
+      <div id="explore-hint" class="explore-hint hidden">MOVE YOUR CURSOR THROUGH THE DARKNESS TO SEARCH THE SAND</div>
+      <div class="player">
+        <div class="timeline-top"><div><span class="live-pulse"></span><span id="status">JOURNEY IN PROGRESS</span></div><span id="clock">00:00 / 02:45</span></div>
+        <div class="timeline"><div id="progress"></div><div class="timeline-labels"><span>THE DRIVE</span><span>NO SIGNAL</span><span>STUCK</span><span>OUTSIDE</span><span>THE RETURN</span></div></div>
+        <div class="player-actions"><button id="pause" aria-label="Pause or resume journey">Ⅱ PAUSE</button><button id="restart" aria-label="Replay from beginning">↺ RESTART</button><span id="audio-mode">DEMO SOUND DESIGN</span></div>
+      </div>
+    </section>
+
+    <section id="ending" class="ending-screen screen hidden"><div class="end-static"></div><span class="eyebrow">TRANSMISSION TERMINATED</span><h2>SIGNAL<br><em>LOST.</em></h2><p>It knew what they said.<br>But who was listening?</p><button id="replay" class="main-button"><span>REPLAY JOURNEY</span><span class="button-arrow">↺</span></button><span class="end-code">END OF TRANSMISSION — 02:45</span></section>
+    <div class="corner-detail" aria-hidden="true">24° 38′ N &nbsp; 54° 37′ E <span>·</span> NIGHT MODE</div>
+  </main>
+  <div id="audio-setup" class="audio-setup" aria-label="Soundtrack settings"><label for="file-audio">＋ ADD YOUR FINAL MIX (MP3 / WAV)</label><input id="file-audio" type="file" accept="audio/*"><span id="audio-help">Optional: demo sound effects play until you add your recorded 2:45 mix.</span></div>
+  <audio id="soundtrack" preload="auto" src="audio/final-mix.mp3"></audio>
+</body>
+</html>
